@@ -5,7 +5,7 @@
         return "
         <file class='mb-2'>
             <div>
-                <img src='https://cdn.mundb.xyz/img/files/$ext.svg' onerror='this.src=unknown_svg;'>
+                <img src='icon/$ext.svg' onerror='this.src=unknown_svg;'>
             </div>
             <div>
                 <h5 class='mundb-text-truncate-1'>$name</h5>
