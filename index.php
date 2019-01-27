@@ -1,7 +1,8 @@
 <?php
     $config=json_decode(file_get_contents("config.json"), true);
-    function prep_file($name,$url){
-        $ext=substr($url,strrpos($url,'.')+1);
+    function prep_file($name, $url)
+    {
+        $ext=substr($url, strrpos($url, '.')+1);
         return "
         <file class='mb-2'>
             <div>
@@ -137,61 +138,14 @@
     
 
     <style>
-        h5{
-            margin-bottom:1rem;
-        }
-        .form-control:disabled, .form-control[disabled]{
-            background-color: transparent;
-        }
-        input{
-            height: calc(2.4375rem + 2px);
-        }
-        #vscode_container{
-            opacity: 0;
-            transition: .2s ease-out .0s;
-        }
-        tips{
-            display: block;
-            font-size: .75rem;
-            color: rgba(0,0,0,.26);
-            margin-bottom: .5rem;
-        }
-        .pb-title{
+        .fs-title{
             color: #7a8e97;
             text-align:center;
+            margin-bottom:1rem;
         }
-
-        .atsast-empty{
-            justify-content: center;
-            align-items: center;
-            height: 10rem;
-        }
-
-        badge{
-            display: inline-block;
-            padding: 0.25rem 0.75em;
-            font-weight: 700;
-            line-height: 1.5;
-            text-align: center;
-            vertical-align: baseline;
-            border-radius: 0.125rem;
-            background-color: #f5f5f5;
-            margin: 1rem;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 30px;
-            border-radius: 4px;
-            transition: .2s ease-out .0s;
-            color: #7a8e97;
-            background: #fff;
-            position: relative;
-            border: 1px solid rgba(0, 0, 0, 0.15);
-        }
-        pre{
-            margin:0!important;
-        }
-        p.pb-info{
+        .fs-info{
             color: #7a8e97;
         }
-
         file{
             display: flex;
             align-items: center;
@@ -240,11 +194,11 @@
     </style>
     <div class="container mundb-standard-container">
         <div style="width:100%;">
-            <h5 class="pb-title mb-3 mt-5"><?php echo $config["title"]; ?></h5>
-            <p class="text-center mb-5 pb-info"><?php echo $config["subtitle"]; ?></p>
-            <?php 
-                foreach($config["file"] as $r) {
-                    echo prep_file($r["name"],$r["url"]);
+            <h5 class="fs-title mb-3 mt-5"><?php echo $config["title"]; ?></h5>
+            <p class="text-center mb-5 fs-info"><?php echo $config["subtitle"]; ?></p>
+            <?php
+                foreach ($config["file"] as $r) {
+                    echo prep_file($r["name"], $r["url"]);
                 }
             ?>
         </div>
