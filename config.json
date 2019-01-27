@@ -1,0 +1,16 @@
+{
+    "header": "文件分享",
+    "title": "新生杯文件分享",
+    "subtitle": "版本：201901271628",
+    "background": "",
+    "file": [
+        {
+            "name": "示例图片",
+            "url": "https://cdn.mundb.xyz/img/bing.png"
+        },
+        {
+            "name": "示例PDF",
+            "url": "https://cdn.mundb.xyz/pdf/print.pdf"
+        }
+    ]
+}
