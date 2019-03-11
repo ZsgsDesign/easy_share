@@ -1,12 +1,12 @@
 <?php
     $config=json_decode(file_get_contents("config.json"), true);
-    function prep_file($name, $url)
+    function prep_file($name, $url, $icon)
     {
-        $ext=substr($url, strrpos($url, '.')+1);
+        $icon = is_null($icon)?substr($url, strrpos($url, '.')+1):$icon;
         return "
         <file class='mb-2'>
             <div>
-                <img src='icon/$ext.svg' onerror='this.src=unknown_svg;'>
+                <img src='icon/$icon.svg' onerror='this.src=unknown_svg;'>
             </div>
             <div>
                 <h5 class='mundb-text-truncate-1'>$name</h5>
@@ -198,7 +198,7 @@
             <p class="text-center mb-5 fs-info"><?php echo $config["subtitle"]; ?></p>
             <?php
                 foreach ($config["file"] as $r) {
-                    echo prep_file($r["name"], $r["url"]);
+                    echo prep_file($r["name"], $r["url"], isset($r["icon"])?$r["icon"]:null);
                 }
             ?>
         </div>

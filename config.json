@@ -11,6 +11,11 @@
         {
             "name": "示例PDF",
             "url": "https://cdn.mundb.xyz/pdf/print.pdf"
+        },
+        {
+            "name": "示例自定义图标",
+            "url": "https://cdn.mundb.xyz/pdf/print.pdf",
+			"icon": "custom/chrome"
         }
     ]
 }
